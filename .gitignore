@@ -1,0 +1,46 @@
+# Dados e mídia (não versionados)
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.hdr
+*.dds
+*.png
+*.jpg
+*.jpeg
+
+# Modelos 3D grandes
+modelos/
+
+# JSONs de dados de campo (saídas dos scripts)
+*_odometria*.json
+*_rotacao.json
+*_pose_dados.json
+pose_dados.json
+memoria_frames.json
+camera3d.json
+matriz_K.json
+pontos_selecionados.txt
+
+# Arquivos de sessão
+.session.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Windows
+Thumbs.db
+desktop.ini
