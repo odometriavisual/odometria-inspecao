@@ -13,6 +13,9 @@
 # Modelos 3D grandes
 modelos/
 
+# Saídas geradas localmente
+output/
+
 # JSONs de dados de campo (saídas dos scripts)
 *_odometria*.json
 *_rotacao.json
