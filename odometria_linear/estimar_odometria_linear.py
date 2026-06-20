@@ -24,7 +24,7 @@ WINDOW_NAME = "Odometria OF: [M] Ajuste | [A/D] +/-10 | [Shift+D] +100 | [ESC] S
 #   - Modo campo normal. Requer pontos de referência.
 #   - USAR_COMPENSACAO_ZOOM controla a metodologia.
 # ------------------------------------------------------------------
-MODO_LABORATORIO = True
+MODO_LABORATORIO = False
 
 # Só relevante quando MODO_LABORATORIO = False.
 # True  → compensa zoom dinamicamente (bom para vídeos com zoom suave)
@@ -868,7 +868,8 @@ while True:
             scale_factor = zoom_state
             zoom_suavizado = ZOOM_SMOOTH_ALPHA * scale_factor + (1 - ZOOM_SMOOTH_ALPHA) * zoom_suavizado
             scale_factor_final = zoom_suavizado
-            zoom_acumulado *= scale_factor_final
+            if abs(scale_factor_final - 1.0) > ZOOM_THRESHOLD:
+                zoom_acumulado *= scale_factor_final
         else:
             scale_factor_final = 1.0
             zoom_acumulado = 1.0
